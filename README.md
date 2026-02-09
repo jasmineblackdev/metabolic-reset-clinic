@@ -1,13 +1,13 @@
-# 🌿 Metabolic Reset Clinic — Website Redesign
+# Metabolic Reset Clinic — Website Redesign
 
 This repository contains the website redesign for **Metabolic Reset Clinic**, focused on improving user experience, visual clarity, and conversion for clients seeking metabolic and wellness services.
 
 🔗 **Current Website:** https://metabolicresetclinic.com  
-🔗 **Redesigned Prototype:** 
+🔗 **Redesigned Prototype:** https://jasmineblackdev.github.io/metabolic-reset-clinic/
 
 ---
 
-## 🧠 Project Overview
+## Project Overview
 
 Metabolic Reset Clinic offers personalized metabolic health and wellness programs.  
 The original website was text-heavy, visually outdated, and lacked clear conversion paths.
@@ -16,7 +16,7 @@ This redesign modernizes the brand presence while improving usability, accessibi
 
 ---
 
-## 🎯 Project Goals
+## Project Goals
 
 - Improve brand credibility and professionalism
 - Simplify navigation and user flow
@@ -26,7 +26,7 @@ This redesign modernizes the brand presence while improving usability, accessibi
 
 ---
 
-## ✨ Key Improvements
+## Key Improvements
 
 - **Modern UI/UX:** Clean layout, improved spacing, and readable typography  
 - **Clear Service Structure:** Services presented with benefit-driven copy  
@@ -36,7 +36,7 @@ This redesign modernizes the brand presence while improving usability, accessibi
 
 ---
 
-## 🎨 Design Direction
+## Design Direction
 
 The redesign follows a **clean, calming wellness aesthetic**:
 - Nature-inspired color palette
@@ -46,7 +46,7 @@ The redesign follows a **clean, calming wellness aesthetic**:
 
 ---
 
-## 🗂 Repository Structure
+## Repository Structure
 /
 ├── assets/ # Images, icons, brand visuals
 ├── design/ # Design files or references
@@ -57,7 +57,7 @@ The redesign follows a **clean, calming wellness aesthetic**:
 
 ---
 
-## 🛠 Tools & Platforms
+## Tools & Platforms
 
 - UI/UX Design
 - Responsive Layout Principles
@@ -67,7 +67,7 @@ The redesign follows a **clean, calming wellness aesthetic**:
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 This repository serves as:
 - A design handoff reference
@@ -76,7 +76,7 @@ This repository serves as:
 
 ---
 
-## 📌 Future Enhancements
+## Future Enhancements
 
 - CMS integration (Webflow / WordPress / Headless CMS)
 - SEO optimization and analytics
@@ -86,7 +86,7 @@ This repository serves as:
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Jasmine Black**  
 UX Designer & Developer  
@@ -94,7 +94,7 @@ UX Designer & Developer
 
 ---
 
-## 📄 License
+## License
 
 This project is shared for demonstration and portfolio purposes.
 
