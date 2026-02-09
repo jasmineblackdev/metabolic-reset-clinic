@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Metabolic Reset Clinic, LLC</title>
+    <meta name="description" content="Contact Metabolic Reset Clinic in Matthews, NC. Schedule a free consultation for medical weight loss, metabolic reset, or chronic disease management. Call (980) 430-3130.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Contact page styles */
+        .contact-hero {
+            padding: 8rem 0 5rem;
+            background-color: var(--primary);
+            text-align: center;
+        }
+        
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-foreground);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-hero p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 48rem;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 1024px) {
+            .contact-hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        .contact-grid {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 3fr 2fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--foreground);
+            margin-bottom: 0.375rem;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            background-color: var(--background);
+            color: var(--foreground);
+            transition: all 0.2s;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(var(--primary), 0.1);
+        }
+        
+        .form-input.error,
+        .form-textarea.error {
+            border-color: hsl(0, 84%, 60%);
+        }
+        
+        .form-error {
+            display: none;
+            align-items: center;
+            gap: 0.25rem;
+            margin-top: 0.25rem;
+            font-size: 0.75rem;
+            color: hsl(0, 84%, 60%);
+        }
+        
+        .form-error.show {
+            display: flex;
+        }
+        
+        .form-row {
+            display: grid;
+            gap: 1.25rem;
+        }
+        
+        @media (min-width: 640px) {
+            .form-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .info-card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-card h3 {
+            font-size: 1.25rem;
+            color: var(--foreground);
+            margin-bottom: 1.25rem;
+        }
+        
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+        }
+        
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--foreground);
+        }
+        
+        .info-value {
+            color: var(--muted-foreground);
+        }
+        
+        .info-value a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+        
+        .map-container {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+        }
+        
+        .booking-card {
+            background-color: var(--primary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .booking-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-foreground);
+            margin-bottom: 0.75rem;
+        }
+        
+        .booking-card p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.75rem;
+        }
+        
+        .booking-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 48px;
+            border-radius: 0.75rem;
+            background-color: var(--gold);
+            color: var(--gold-foreground);
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            margin-bottom: 0.75rem;
+        }
+        
+        .booking-link:hover {
+            background-color: hsl(96, 52%, 45%);
+        }
+        
+        .booking-alt {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+        
+        .booking-alt:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        .success-message {
+            display: none;
+            background-color: var(--accent);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            color: var(--primary);
+            margin: 0 auto 1rem;
+        }
+        
+        .success-message h2 {
+            font-size: 1.5rem;
+            color: var(--foreground);
+            margin-bottom: 1rem;
+        }
+        
+        .success-message p {
+            color: var(--muted-foreground);
+            max-width: 28rem;
+            margin: 0 auto 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                   <img src="images/logo.png" class="logo-icon">
+                    <div class="logo-text">
+                        <span class="logo-title">Metabolic Reset</span>
+                        <span class="logo-subtitle">CLINIC, LLC</span>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="medical-weight-loss.html" class="nav-link">Weight Loss</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="header-cta">
+                    <a href="tel:9804303130" class="phone-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        (980) 430-3130
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Book Free Consult</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="index.html#services" class="mobile-nav-link">Services</a>
+                    <a href="about.html" class="mobile-nav-link">About Us</a>
+                    <a href="medical-weight-loss.html" class="mobile-nav-link">Weight Loss</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </nav>
+                <div class="mobile-cta">
+                    <a href="tel:9804303130" class="btn btn-accent btn-lg mobile-cta-btn">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Call (980) 430-3130
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-lg mobile-cta-btn">Book Free Consult</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1 class="fade-in-up">Get in Touch</h1>
+                <p class="fade-in-up" style="animation-delay: 0.1s;">
+                    Ready to start your health transformation? Contact us to schedule a free
+                    consultation or ask any questions about our programs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Form -->
+                    <div>
+                        <div id="contactForm">
+                            <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--foreground); margin-bottom: 1.5rem;">Send Us a Message</h2>
+                            <form id="messageForm" novalidate>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Full Name *</label>
+                                        <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" maxlength="100" required>
+                                        <div class="form-error" id="name-error">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                            </svg>
+                                            <span id="name-error-text">Name is required</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" maxlength="255" required>
+                                        <div class="form-error" id="email-error">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                            </svg>
+                                            <span id="email-error-text">Email is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="(704) 555-0000" maxlength="20">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="service" class="form-label">Service Interest</label>
+                                        <select id="service" name="service" class="form-select">
+                                            <option value="">Select a service...</option>
+                                            <option value="Weight Loss Programs">Weight Loss Programs</option>
+                                            <option value="Metabolic Reset Program">Metabolic Reset Program</option>
+                                            <option value="Chronic Disease Management">Chronic Disease Management</option>
+                                            <option value="Primary Care Services">Primary Care Services</option>
+                                            <option value="Integrative Functional Medicine">Integrative Functional Medicine</option>
+                                            <option value="Physical Exams">Physical Exams</option>
+                                            <option value="Wellness Visits">Wellness Visits</option>
+                                            <option value="Sick Visits">Sick Visits</option>
+                                            <option value="Telemedicine Consultation">Telemedicine Consultation</option>
+                                            <option value="Other / Not Sure">Other / Not Sure</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your health goals or ask any questions..." maxlength="2000" required></textarea>
+                                    <div class="form-error" id="message-error">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                        <span id="message-error-text">Message is required</span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    Send Message
+                                    <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="success-message" id="successMessage">
+                            <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <h2>Message Sent!</h2>
+                            <p>
+                                Thank you for reaching out. Our team will get back to you within 24 hours.
+                                For urgent matters, please call us directly.
+                            </p>
+                            <button class="btn btn-primary btn-lg" onclick="resetForm()">
+                                Send Another Message
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div>
+                        <div class="info-card">
+                            <h3>Clinic Information</h3>
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <div>
+                                        <div class="info-label">Address</div>
+                                        <div class="info-value">1122 Sam Newell Rd. St. 114<br>Matthews, NC 28105</div>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                    <div>
+                                        <div class="info-label">Phone</div>
+                                        <div class="info-value"><a href="tel:9804303130">(980) 430-3130</a></div>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <div>
+                                        <div class="info-label">Email</div>
+                                        <div class="info-value"><a href="mailto:contact@metabolicresetclinic.com">contact@metabolicresetclinic.com</a></div>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <div>
+                                        <div class="info-label">Office Hours</div>
+                                        <div class="info-value">
+                                            Mon – Fri: 8:00 AM – 5:00 PM<br>
+                                            Saturday: 9:00 AM – 1:00 PM<br>
+                                            Sunday: Closed
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe
+                                title="Metabolic Reset Clinic Location"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.5!2d-80.7188435!3d35.1297265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA3JzQ3LjAiTiA4MMKwNDMnMDcuOCJX!5e0!3m2!1sen!2sus!4v1700000000000"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+
+                        <div class="booking-card">
+                            <h3>Prefer to Book Directly?</h3>
+                            <p>Schedule your appointment online via telemedicine or give us a call.</p>
+                            <a href="https://doxy.me/glawson" target="_blank" rel="noopener noreferrer" class="booking-link">
+                                Join Telemedicine Appointment
+                            </a>
+                            <a href="tel:9804303130" class="booking-alt">
+                                or call (980) 430-3130
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" class="logo-icon">
+                        <div class="logo-text">
+                            <span class="logo-title-footer">Metabolic Reset</span>
+                            <span class="logo-subtitle-footer">CLINIC, LLC</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Compassionate, whole-person healthcare designed to restore balance and vitality. 
+                        Faith-based care with over 30 years of medical experience in Matthews, NC.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Our Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="medical-weight-loss.html">Weight Loss Programs</a></li>
+                        <li><a href="metabolic-reset.html">Metabolic Reset Program</a></li>
+                        <li><a href="chronic-disease.html">Chronic Disease Management</a></li>
+                        <li><a href="index.html#services">Primary Care Services</a></li>
+                        <li><a href="index.html#services">Integrative Functional Medicine</a></li>
+                        <li><a href="index.html#services">Wellness & Sick Visits</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Our Providers</a></li>
+                        <li><a href="https://metabolicresetclinic.com/dispensary" target="_blank">Dispensary</a></li>
+                        <li><a href="https://doxy.me/glawson" target="_blank">Telemedicine</a></li>
+                        <li><a href="blog.html" target="_blank">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>1122 Sam Newell Rd. St. 114,<br>Matthews, NC 28105</span>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <a href="tel:9804303130">(980) 430-3130</a>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contact@metabolicresetclinic.com">contact@metabolicresetclinic.com</a>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Mon–Fri: 8am–5pm<br>Sat: 9am–1pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <span class="footer-copyright">© <span id="currentYear"></span> Metabolic Reset Clinic, LLC. All rights reserved.</span>
+                    <div class="footer-legal">
+                        <a href="https://metabolicresetclinic.com/merchant-policies">Merchant Policies</a>
+                        <a href="https://metabolicresetclinic.com/legal-notice">Legal Notice</a>
+                        <a href="#">HIPAA Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form validation and submission
+        const form = document.getElementById('messageForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(inputId, errorMsg) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(inputId + '-error');
+            const errorText = document.getElementById(inputId + '-error-text');
+            
+            input.classList.add('error');
+            error.classList.add('show');
+            if (errorText && errorMsg) {
+                errorText.textContent = errorMsg;
+            }
+        }
+
+        function clearError(inputId) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(inputId + '-error');
+            
+            input.classList.remove('error');
+            error.classList.remove('show');
+        }
+
+        // Clear errors on input
+        nameInput.addEventListener('input', () => clearError('name'));
+        emailInput.addEventListener('input', () => clearError('email'));
+        messageInput.addEventListener('input', () => clearError('message'));
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let hasError = false;
+
+            // Validate name
+            if (!nameInput.value.trim()) {
+                showError('name', 'Name is required');
+                hasError = true;
+            }
+
+            // Validate email
+            if (!emailInput.value.trim()) {
+                showError('email', 'Email is required');
+                hasError = true;
+            } else if (!validateEmail(emailInput.value)) {
+                showError('email', 'Please enter a valid email');
+                hasError = true;
+            }
+
+            // Validate message
+            if (!messageInput.value.trim()) {
+                showError('message', 'Message is required');
+                hasError = true;
+            }
+
+            if (hasError) {
+                return;
+            }
+
+            // Build mailto link
+            const formData = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                phone: document.getElementById('phone').value.trim() || 'Not provided',
+                service: document.getElementById('service').value || 'Not specified',
+                message: messageInput.value.trim()
+            };
+
+            const subject = encodeURIComponent(`New Contact: ${formData.service}`);
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Phone: ${formData.phone}\n` +
+                `Service: ${formData.service}\n\n` +
+                `Message:\n${formData.message}`
+            );
+
+            window.location.href = `mailto:contact@metabolicresetclinic.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+        });
+
+        function resetForm() {
+            form.reset();
+            document.getElementById('contactForm').style.display = 'block';
+            document.getElementById('successMessage').classList.remove('show');
+            clearError('name');
+            clearError('email');
+            clearError('message');
+        }
+    </script>
+</body>
+</html>

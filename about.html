@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Metabolic Reset Clinic, LLC</title>
+    <meta name="description" content="Learn about Metabolic Reset Clinic's faith-based, whole-person approach to healthcare. Meet Gretchen Lawson, AGNP-C and our experienced team in Matthews, NC.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* About page specific styles */
+        .about-hero {
+            padding: 8rem 0 4rem;
+            background-color: var(--primary);
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-foreground);
+            margin-bottom: 1rem;
+        }
+        
+        .about-hero p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 48rem;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 1024px) {
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        .provider-card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .provider-card {
+                grid-template-columns: 1fr 3fr;
+                padding: 2rem;
+            }
+        }
+        
+        .provider-avatar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .avatar-circle {
+            width: 96px;
+            height: 96px;
+            border-radius: 1rem;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-foreground);
+            font-size: 1.5rem;
+            font-family: 'DM Serif Display', serif;
+        }
+        
+        .provider-info {
+            text-align: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .provider-info {
+                text-align: left;
+            }
+        }
+        
+        .provider-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.125rem;
+            color: var(--foreground);
+        }
+        
+        .provider-role {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .provider-years {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            margin-top: 0.25rem;
+        }
+        
+        .provider-content {
+        }
+        
+        .provider-bio {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .specialty-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-top: 0.5rem;
+        }
+        
+        .specialty-tag {
+            padding: 0.5rem 0.75rem;
+            border-radius: 9999px;
+            background-color: var(--accent);
+            color: var(--accent-foreground);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" class="logo-icon">
+                    <div class="logo-text">
+                        <span class="logo-title">Metabolic Reset</span>
+                        <span class="logo-subtitle">CLINIC, LLC</span>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="medical-weight-loss.html" class="nav-link">Weight Loss</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="header-cta">
+                    <a href="tel:9804303130" class="phone-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        (980) 430-3130
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Book Free Consult</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="index.html#services" class="mobile-nav-link">Services</a>
+                    <a href="about.html" class="mobile-nav-link">About Us</a>
+                    <a href="medical-weight-loss.html" class="mobile-nav-link">Weight Loss</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </nav>
+                <div class="mobile-cta">
+                    <a href="tel:9804303130" class="btn btn-accent btn-lg mobile-cta-btn">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Call (980) 430-3130
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-lg mobile-cta-btn">Book Free Consult</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="fade-in-up">Healing With Purpose Together</h1>
+                <p class="fade-in-up" style="animation-delay: 0.1s;">
+                    A faith-driven approach built on compassion, integrity, and over three decades 
+                    of care. Led by experienced healthcare professionals dedicated to guiding patients 
+                    toward better health through education, empathy, and evidence-based treatment.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Description -->
+        <section class="section">
+            <div class="container" style="max-width: 56rem;">
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="fade-in">
+                        <h2 class="section-title" style="text-align: left; font-size: 1.875rem; margin-bottom: 1rem;">Holistic Healthcare in Matthews</h2>
+                        <p class="section-description" style="text-align: left;">
+                            At Metabolic Reset Clinic in Matthews, NC, we provide comprehensive primary care and medically 
+                            managed weight loss services designed to restore balance and vitality. Patients receive attentive 
+                            support for diabetes, thyroid disorders, obesity, and more. Our practice was founded on the 
+                            belief that true healing requires addressing the whole person – body, mind, and spirit.
+                        </p>
+                    </div>
+                    <div class="fade-in">
+                        <h2 class="section-title" style="text-align: left; font-size: 1.875rem; margin-bottom: 1rem;">A Journey Built on Experience and Purpose</h2>
+                        <p class="section-description" style="text-align: left;">
+                            Led by a primary care nurse practitioner with over 30 years of experience, this practice 
+                            was founded on compassion, integrity, and faith-driven care. The mission reflects a lifelong 
+                            dedication to guiding patients toward better health through education, empathy, and evidence-based 
+                            treatment.
+                        </p>
+                    </div>
+                    <div class="fade-in">
+                        <h2 class="section-title" style="text-align: left; font-size: 1.875rem; margin-bottom: 1rem;">Empowering Whole-Person Wellness</h2>
+                        <p class="section-description" style="text-align: left;">
+                            Our philosophy centers on viewing health as a balance of body, mind, and spirit. By combining 
+                            integrative functional medicine with personalized guidance, patients are encouraged to take active 
+                            roles in their healing. Each success story reflects the transformative power of individualized, 
+                            purpose-filled care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Providers -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Guided by Compassionate Experts</h2>
+                    <p class="section-description">Meet the dedicated healthcare professionals behind Metabolic Reset Clinic.</p>
+                </div>
+
+                <div style="max-width: 56rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem;">
+                    <!-- Provider 1 -->
+                    <div class="provider-card fade-in">
+                        <div class="provider-avatar">
+                            <div class="avatar-circle">GL</div>
+                            <div class="provider-info">
+                                <h3 class="provider-name">Gretchen Lawson, AGNP-C</h3>
+                                <div class="provider-role">Nurse Practitioner / Provider</div>
+                                <div class="provider-years">30+ years experience</div>
+                            </div>
+                        </div>
+                        <div class="provider-content">
+                            <p class="provider-bio">
+                                Gretchen Lawson is a seasoned and dedicated board-certified Adult-Gerontology Primary Care Nurse Practitioner with over 30 years in the healthcare industry. She has consistently demonstrated a commitment to enhancing the health and well-being of individuals through comprehensive and compassionate care. Throughout her professional journey, she has developed a passion for helping underprivileged people in our communities build healthier lifestyles. Gretchen's focus includes identifying the root cause of chronic health conditions – understanding that obesity and silent inflammation are at the core of conditions like diabetes, metabolic syndrome, hypertension, and high cholesterol. She integrates evidence-based practices with natural supplements, providing personalized strategies for weight loss and sustainable healthy living. She is also the author of "Healing by Nature," a faith-based functional medicine guide.
+                            </p>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">Adult-Gerontology Primary Care</span>
+                                <span class="specialty-tag">Obesity Medicine</span>
+                                <span class="specialty-tag">Integrative Functional Medicine</span>
+                                <span class="specialty-tag">Chronic Disease Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Provider 2 -->
+                    <div class="provider-card fade-in">
+                        <div class="provider-avatar">
+                            <div class="avatar-circle">RL</div>
+                            <div class="provider-info">
+                                <h3 class="provider-name">Ronald Lawson, RN</h3>
+                                <div class="provider-role">Registered Nurse</div>
+                                <div class="provider-years">27+ years of service</div>
+                            </div>
+                        </div>
+                        <div class="provider-content">
+                            <p class="provider-bio">
+                                Ronald Lawson is a retired Army Major with 27 years of honorable military service, now continuing a lifelong mission to help others through nursing. He brings exceptional leadership, discipline, and compassion to patient care, ensuring every individual receives attentive, respectful, and effective support in their journey to better health. His military background instills a unique dedication to service and precision in clinical care.
+                            </p>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">Patient Care</span>
+                                <span class="specialty-tag">Leadership</span>
+                                <span class="specialty-tag">Clinical Support</span>
+                                <span class="specialty-tag">Veteran Healthcare</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="cta-bg-circles">
+                <div class="cta-circle cta-circle-1"></div>
+                <div class="cta-circle cta-circle-2"></div>
+            </div>
+            <div class="container">
+                <div class="cta-content fade-in">
+                    <h2 class="cta-title">Ready to Transform Your Health?</h2>
+                    <p class="cta-description">
+                        Schedule your free consultation today and discover how our personalized approach
+                        can help you achieve the lasting results you deserve.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-gold btn-xl">
+                            Book Free Consultation
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="tel:9804303130" class="cta-phone-link">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Or Call (980) 430-3130
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                         <img src="images/logo.png" class="logo-icon">
+                        <div class="logo-text">
+                            <span class="logo-title-footer">Metabolic Reset</span>
+                            <span class="logo-subtitle-footer">CLINIC, LLC</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Compassionate, whole-person healthcare designed to restore balance and vitality. 
+                        Faith-based care with over 30 years of medical experience in Matthews, NC.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Our Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="medical-weight-loss.html">Weight Loss Programs</a></li>
+                        <li><a href="metabolic-reset.html">Metabolic Reset Program</a></li>
+                        <li><a href="chronic-disease.html">Chronic Disease Management</a></li>
+                        <li><a href="index.html#services">Primary Care Services</a></li>
+                        <li><a href="index.html#services">Integrative Functional Medicine</a></li>
+                        <li><a href="index.html#services">Wellness & Sick Visits</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Our Providers</a></li>
+                        <li><a href="https://metabolicresetclinic.com/dispensary" target="_blank">Dispensary</a></li>
+                        <li><a href="https://doxy.me/glawson" target="_blank">Telemedicine</a></li>
+                        <li><a href="blog.html" target="_blank">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>1122 Sam Newell Rd. St. 114,<br>Matthews, NC 28105</span>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <a href="tel:9804303130">(980) 430-3130</a>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="/cdn-cgi/l/email-protection#4a2925243e2b293e0a272f3e2b2825262329382f392f3e29262324232964292527"><span class="__cf_email__" data-cfemail="ccafa3a2b8adafb88ca1a9b8adaea3a0a5afbea9bfa9b8afa0a5a2a5afe2afa3a1">[email&#160;protected]</span></a>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Mon–Fri: 8am–5pm<br>Sat: 9am–1pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <span class="footer-copyright">© <span id="currentYear"></span> Metabolic Reset Clinic, LLC. All rights reserved.</span>
+                    <div class="footer-legal">
+                        <a href="https://metabolicresetclinic.com/merchant-policies">Merchant Policies</a>
+                        <a href="https://metabolicresetclinic.com/legal-notice">Legal Notice</a>
+                        <a href="#">HIPAA Noti
