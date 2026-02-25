@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Blog | Metabolic Reset Clinic</title>
+    <meta name="description" content="Expert insights on weight loss, metabolic health, chronic disease management, and integrative medicine from Metabolic Reset Clinic in Matthews, NC.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .blog-hero {
+            padding: 8rem 0 5rem;
+            background-color: var(--primary);
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-foreground);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-hero p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 48rem;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 1024px) {
+            .blog-hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        .blog-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .blog-card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.12);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .blog-image svg {
+            width: 48px;
+            height: 48px;
+            color: var(--primary-foreground);
+            opacity: 0.3;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background-color: var(--accent);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        
+        .blog-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            color: var(--foreground);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        
+        .blog-title a {
+            color: var(--foreground);
+            text-decoration: none;
+        }
+        
+        .blog-title a:hover {
+            color: var(--primary);
+        }
+        
+        .blog-excerpt {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .blog-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .blog-meta-item svg {
+            width: 14px;
+            height: 14px;
+        }
+        
+        .categories-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border);
+            background-color: var(--background);
+            color: var(--foreground);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .category-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .category-btn.active {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            border-color: var(--primary);
+        }
+        
+        .newsletter-cta {
+            background-color: var(--accent);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .newsletter-cta h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--foreground);
+            margin-bottom: 0.75rem;
+        }
+        
+        .newsletter-cta p {
+            color: var(--muted-foreground);
+            margin-bottom: 1.5rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 32rem;
+            margin: 0 auto;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 640px) {
+            .newsletter-form {
+                flex-direction: row;
+            }
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            background-color: var(--background);
+            color: var(--foreground);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                 <img src="images/logo.png" class="logo-icon">
+                    <div class="logo-text">
+                        <span class="logo-title">Metabolic Reset</span>
+                        <span class="logo-subtitle">CLINIC, LLC</span>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="medical-weight-loss.html" class="nav-link">Weight Loss</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="header-cta">
+                    <a href="tel:9804303130" class="phone-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        (980) 430-3130
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Book Free Consult</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="index.html#services" class="mobile-nav-link">Services</a>
+                    <a href="about.html" class="mobile-nav-link">About Us</a>
+                    <a href="medical-weight-loss.html" class="mobile-nav-link">Weight Loss</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </nav>
+                <div class="mobile-cta">
+                    <a href="tel:9804303130" class="btn btn-accent btn-lg mobile-cta-btn">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Call (980) 430-3130
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-lg mobile-cta-btn">Book Free Consult</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="blog-hero">
+            <div class="container">
+                <h1 class="fade-in-up">Health & Wellness Blog</h1>
+                <p class="fade-in-up" style="animation-delay: 0.1s;">
+                    Expert insights on weight loss, metabolic health, and whole-person wellness from our clinical team.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="section">
+            <div class="container">
+                <!-- Category Filter -->
+                <div class="categories-filter fade-in">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                    <button class="category-btn" data-category="weight-loss">Weight Loss</button>
+                    <button class="category-btn" data-category="nutrition">Nutrition</button>
+                    <button class="category-btn" data-category="wellness">Wellness</button>
+                    <button class="category-btn" data-category="chronic-disease">Chronic Disease</button>
+                </div>
+
+                <!-- Blog Posts Grid -->
+                <div class="blog-grid" id="blogGrid">
+                    <!-- Blog posts will be loaded here by JavaScript -->
+                </div>
+
+                <!-- Newsletter CTA -->
+                <div class="newsletter-cta fade-in">
+                    <h2>Stay Updated</h2>
+                    <p>Get the latest health tips and updates delivered to your inbox.</p>
+                    <form class="newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary btn-lg">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                       <img src="images/logo.png" class="logo-icon">
+                        <div class="logo-text">
+                            <span class="logo-title-footer">Metabolic Reset</span>
+                            <span class="logo-subtitle-footer">CLINIC, LLC</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Compassionate, whole-person healthcare designed to restore balance and vitality. 
+                        Faith-based care with over 30 years of medical experience in Matthews, NC.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Our Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="medical-weight-loss.html">Weight Loss Programs</a></li>
+                        <li><a href="metabolic-reset.html">Metabolic Reset Program</a></li>
+                        <li><a href="chronic-disease.html">Chronic Disease Management</a></li>
+                        <li><a href="index.html#services">Primary Care Services</a></li>
+                        <li><a href="index.html#services">Integrative Functional Medicine</a></li>
+                        <li><a href="index.html#services">Wellness & Sick Visits</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Our Providers</a></li>
+                        <li><a href="https://metabolicresetclinic.com/dispensary" target="_blank">Dispensary</a></li>
+                        <li><a href="https://doxy.me/glawson" target="_blank">Telemedicine</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>1122 Sam Newell Rd. St. 114,<br>Matthews, NC 28105</span>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <a href="tel:9804303130">(980) 430-3130</a>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contact@metabolicresetclinic.com">contact@metabolicresetclinic.com</a>
+                        </li>
+                        <li>
+                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Mon–Fri: 8am–5pm<br>Sat: 9am–1pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <span class="footer-copyright">© <span id="currentYear"></span> Metabolic Reset Clinic, LLC. All rights reserved.</span>
+                    <div class="footer-legal">
+                        <a href="https://metabolicresetclinic.com/merchant-policies">Merchant Policies</a>
+                        <a href="https://metabolicresetclinic.com/legal-notice">Legal Notice</a>
+                        <a href="#">HIPAA Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">All Services Should Appear Below</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Services will load here -->
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/main.js"></script>
+    <script>
+        // Debug to console
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Services data:', servicesData);
+            console.log('Services grid:', document.querySelector('.services-grid'));
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.service-card');
+                console.log('Service cards rendered:', cards.length);
+            }, 100);
+        });
+    </script>
+</body>
+</html>
